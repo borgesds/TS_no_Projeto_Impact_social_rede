@@ -12,15 +12,23 @@ import styles from './Post.module.css'
 interface Author {
     name: string;
     role: string;
-    avatarUrl: string;
+    avataUrl: string;
+}
+
+// o content e umarray então tem que esta separado
+interface Content {
+    type: 'paragraph' | 'link';
+    content: string;
 }
 
 // esse TS chama o de cima
 interface PostProps {
     author: Author;
     publishedAt: Date;
-    content: string;
+    content: Content[];
 }
+
+
 
 export function Post({ author, publishedAt, content }: PostProps) {
     // criar um estado
@@ -70,7 +78,7 @@ export function Post({ author, publishedAt, content }: PostProps) {
         event.target.setCustomValidity('Esse campo é obrigatório!')
     }
 
-    function deleteComment(commentToDelete) {
+    function deleteComment(commentToDelete: string) {
         // cria uma nova lista de comentarios sem o que foi deletado
         const commentsWithoutDeletedOne = comments.filter(comment => {
             return comment !== commentToDelete
