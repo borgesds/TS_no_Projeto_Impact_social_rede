@@ -1,0 +1,35 @@
+1 => instala o nodeJS e o n "https://github.com/tj/n"
+
+2 => para cria o projeto em react, vamos usar o Vite, dentro da pasta e no terminal execute:
+npm create vite@latest
+
+3 => Abra o a pasta que você acabou de criar e abra o terminal do VScode execute:
+    - npm i
+    - npm run dev
+
+4 => para exportar o modulo:
+                            export function Post() {
+                                return (
+                                    <p>Post</p>
+                                )                       
+                            }
+5 => recebe a exportação:
+                        import { Post } from './post'
+    - Ctrl + espaço dentro das chaves mostra seu motulo.
+
+6 => no react quando queremos buscar um valor de uma variavel usamos {}, 
+     e na função recebe props.:
+    ex:
+        export function Post(props) {
+    return (
+        <p>{props.content}</p>    <=====
+    )
+}
+
+7 => podemos instar biblioteca de icones:
+    - npm i phosphor-react
+
+        - para aplicar essa bibiloteca, importa onde você vai usar.
+
+8 => podemos usar para formatar data uma biblioteca chamada date-fns, então instale:
+    - npm i date-fns
